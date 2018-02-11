@@ -9,6 +9,7 @@ const getAccessToken = (z, bundle) => {
       client_secret: clientSecret,
       grant_type: 'authorization_code',
       state: '{{bundle.inputData.state}}',
+      redirect_uri: '{{bundle.inputData.redirect_uri}}'
     },
     headers: {
       'Authorization': `Basic ${Buffer.from(`${clientId}:${clientSecret}`).toString('base64')}`,
@@ -36,11 +37,8 @@ const refreshAccessToken = (z, bundle) => {
   const request = z.request('https://api.fitbit.com/oauth2/token', {
     method: 'POST',
     body: {
-      code: bundle.inputData.code,
-      client_id: clientId,
-      client_secret: clientSecret,
       grant_type: 'refresh_token',
-      state: '{{bundle.inputData.state}}',
+      refresh_token: bundle.authData.refresh_token
     },
     headers: {
       'Authorization': `Basic ${Buffer.from(`${clientId}:${clientSecret}`).toString('base64')}`,

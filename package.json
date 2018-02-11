@@ -1,6 +1,6 @@
 {
   "name": "zapier-fitbit",
-  "version": "1.0.0-alpha1",
+  "version": "0.1.1",
   "description": "Fitbit app for the Zapier platform.",
   "repository": "https://github.com/jsDotCr/zapier-fitbit",
   "homepage": "https://github.com/jsDotCr/zapier-fitbit",
@@ -9,9 +9,10 @@
   "main": "index.js",
   "scripts": {
     "test": "node node_modules/mocha/bin/mocha --recursive",
-    "preversion": "npm test",
+    "validate": "zapier validate",
+    "preversion": "npm test && npm run validate",
     "version": "git add -A dist",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags && zapier push"
   },
   "engines": {
     "node": "6.10.2",

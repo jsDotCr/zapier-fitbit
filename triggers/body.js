@@ -10,6 +10,6 @@ exports.apiRequest = function apiRequest(what, z, bundle) {
   return responsePromise
     .then(response => z.JSON.parse(response.content)[what])
     .map(item => Object.assign({
-      id: `${item.logId}-${item.date}-${item.time}`
+      id: `${item.logId}-${what}-${item.date}T${item.time}`
     }, item))
 }

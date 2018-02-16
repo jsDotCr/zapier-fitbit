@@ -11,6 +11,7 @@ module.exports = {
     inputFields: [],
     perform: (z, bundle) => apiRequest('weight', z, bundle),
     sample: {
+      id: '1330991999000-weight-2012-03-05T23:59:59',
       bmi: 23.57,
       date: '2015-03-05',
       logId: 1330991999000,

@@ -1,5 +1,6 @@
 const authentication = require('./authentication')
 const BodyFat = require('./triggers/bodyFat')
+const BodyWeight = require('./triggers/bodyWeight')
 
 const includeBearerToken = (request, z, bundle) => {
   if (bundle.authData.access_token) {
@@ -26,6 +27,7 @@ const App = {
 
   triggers: {
     [BodyFat.key]: BodyFat,
+    [BodyWeight.key]: BodyWeight,
   },
 
   searches: {

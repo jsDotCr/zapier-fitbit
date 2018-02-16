@@ -1,14 +1,12 @@
-const ActivityTrigger = require('./triggers/activity');
-const authentication = require('./authentication');
+const authentication = require('./authentication')
+const BodyFat = require('./triggers/bodyFat')
 
-// To include the Authorization header on all outbound requests, simply define a function here.
-// It runs runs before each request is sent out, allowing you to make tweaks to the request in a centralized spot
 const includeBearerToken = (request, z, bundle) => {
   if (bundle.authData.access_token) {
-    request.headers.Authorization = `Bearer ${bundle.authData.access_token}`;
+    request.headers.Authorization = `Bearer ${bundle.authData.access_token}`
   }
-  return request;
-};
+  return request
+}
 
 const App = {
   version: require('./package.json').version,
@@ -23,23 +21,18 @@ const App = {
   afterResponse: [
   ],
 
-  // If you want to define optional resources to simplify creation of triggers, searches, creates - do that here!
   resources: {
   },
 
-  // If you want your trigger to show up, you better include it here!
   triggers: {
-    [ActivityTrigger.key]: ActivityTrigger,
+    [BodyFat.key]: BodyFat,
   },
 
-  // If you want your searches to show up, you better include it here!
   searches: {
   },
 
-  // If you want your creates to show up, you better include it here!
   creates: {
   }
-};
+}
 
-// Finally, export the app.
-module.exports = App;
+module.exports = App

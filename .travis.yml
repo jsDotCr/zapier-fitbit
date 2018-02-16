@@ -1,7 +1,5 @@
 language: node_js
-node_js:
-  - 6.10.2
-before_script: 'npm install -g zapier-platform-cli'
-script: 'zapier test'
+before_script: npm install
+script: npm test
 notifications:
   email: false

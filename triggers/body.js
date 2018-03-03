@@ -12,4 +12,5 @@ exports.apiRequest = function apiRequest (what, z, bundle) {
     .map(item => Object.assign({
       id: `${item.logId}-${what}-${item.date}T${item.time}`
     }, item))
+    .reverse()
 }

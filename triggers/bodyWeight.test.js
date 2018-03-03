@@ -19,7 +19,7 @@ describe('Fitbit App', () => {
           {
             'bmi': 23.57,
             'date': '2015-03-05',
-            'logId': 1330991999000,
+            'logId': 1330991899000,
             'time': '23:59:59',
             'weight': 73,
             'source': 'API'

@@ -48,15 +48,22 @@ describe('Fitbit App', () => {
           {
             'date': '2012-03-05',
             'fat': 14,
-            'logId': 1330991999000,
+            'logId': 1330991799000,
             'time': '23:59:59',
             'source': 'API'
           },
           {
-            'date': '2012-03-05',
+            'date': '2012-03-06',
             'fat': 13.5,
-            'logId': 1330991999000,
+            'logId': 1330991899000,
             'time': '21:20:59',
+            'source': 'Aria'
+          },
+          {
+            'date': '2012-03-07',
+            'fat': 13.8,
+            'logId': 1330991999000,
+            'time': '20:20:59',
             'source': 'Aria'
           }
         ]
@@ -65,7 +72,49 @@ describe('Fitbit App', () => {
 
     appTester(App.triggers.bodyFat.operation.perform, bundle)
       .then(results => {
-        results.length.should.equal(2)
+        results.length.should.equal(3)
+        done()
+      })
+      .catch(done)
+  })
+
+  it('should reverse the order of elements', done => {
+    const bundle = { inputData: {} }
+    const elements = [
+      {
+        'date': '2012-03-05',
+        'fat': 14,
+        'logId': 1330991799000,
+        'time': '23:59:59',
+        'source': 'API'
+      },
+      {
+        'date': '2012-03-06',
+        'fat': 13.5,
+        'logId': 1330991899000,
+        'time': '21:20:59',
+        'source': 'Aria'
+      },
+      {
+        'date': '2012-03-07',
+        'fat': 13.8,
+        'logId': 1330991999000,
+        'time': '20:20:59',
+        'source': 'Aria'
+      }
+    ]
+    nock('https://api.fitbit.com/1')
+      .replyContentLength()
+      .get(/\/user\/-\/body\/log\/fat\/date.*\.json/)
+      .query(bundle.inputData)
+      .reply(200, {
+        fat: elements
+      })
+
+    appTester(App.triggers.bodyFat.operation.perform, bundle)
+      .then(results => {
+        results[0].date.should.equal(elements[elements.length - 1].date)
+        results[results.length - 1].date.should.eql(elements[0].date)
         done()
       })
       .catch(done)

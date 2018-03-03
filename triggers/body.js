@@ -11,7 +11,7 @@ exports.apiRequest = function apiRequest (what, z, bundle) {
     .then(response => z.JSON.parse(response.content)[what])
     .then(items => items
       .map(item => Object.assign({
-        id: `${item.logId}-${what}-${item.date}T${item.time}`
+        id: item.logId
       }, item))
       .reverse()
     )

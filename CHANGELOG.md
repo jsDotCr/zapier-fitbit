@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.3.4"></a>
+## [0.3.4](https://github.com/jsDotCr/zapier-fitbit/compare/v0.3.3...v0.3.4) (2018-03-03)
+
+
+### Bug Fixes
+
+* **body:** reverse array of items ([2d3b6fb](https://github.com/jsDotCr/zapier-fitbit/commit/2d3b6fb))
+* **body:** reverse array of items ([d6f51a1](https://github.com/jsDotCr/zapier-fitbit/commit/d6f51a1))
+* **test:** update references to app and list of tests to execute ([d22057a](https://github.com/jsDotCr/zapier-fitbit/commit/d22057a))
+
+
+
 <a name="0.3.3"></a>
 ## [0.3.3](https://github.com/jsDotCr/zapier-fitbit/compare/v0.3.2...v0.3.3) (2018-03-03)
 

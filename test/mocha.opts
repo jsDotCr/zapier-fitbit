@@ -1,2 +1,4 @@
 --recursive
-test/**/*.js
+*.test.js
+creates/**/*.test.js
+triggers/**/*.test.js

@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.4.1"></a>
+## [0.4.1](https://github.com/jsDotCr/zapier-fitbit/compare/v0.4.0...v0.4.1) (2018-03-03)
+
+
+### Bug Fixes
+
+* **body:** simplify id ([9a33e07](https://github.com/jsDotCr/zapier-fitbit/commit/9a33e07))
+* **body weight:** update test with more realistic data ([0e1aa18](https://github.com/jsDotCr/zapier-fitbit/commit/0e1aa18))
+* **body weight:** update test with more realistic data ([66b365e](https://github.com/jsDotCr/zapier-fitbit/commit/66b365e))
+
+
+
 <a name="0.4.0"></a>
 # 0.4.0 (2018-03-03)
 

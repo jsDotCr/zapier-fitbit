@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.4.0"></a>
+# 0.4.0 (2018-03-03)
+
+
+### Bug Fixes
+
+* **auth:** fix test endpoint ([3c56b00](https://github.com/jsDotCr/zapier-fitbit/commit/3c56b00))
+* **authentication:** fix wrong variable name ([24aab38](https://github.com/jsDotCr/zapier-fitbit/commit/24aab38))
+* **authentication:** missing redirect_url, update refresh token payload ([bf2e60e](https://github.com/jsDotCr/zapier-fitbit/commit/bf2e60e))
+* **body:** create a unique ID ([343a3df](https://github.com/jsDotCr/zapier-fitbit/commit/343a3df))
+* **body:** fix base date ([8bc7fc7](https://github.com/jsDotCr/zapier-fitbit/commit/8bc7fc7))
+* **body:** reverse array of items ([5bfba75](https://github.com/jsDotCr/zapier-fitbit/commit/5bfba75))
+* **body:** reverse array of items ([fdbadcb](https://github.com/jsDotCr/zapier-fitbit/commit/fdbadcb))
+* **test:** update references to app and list of tests to execute ([3adf1ec](https://github.com/jsDotCr/zapier-fitbit/commit/3adf1ec))
+
+
+### Features
+
+* **authentication:** add authentication functions ([24ca55d](https://github.com/jsDotCr/zapier-fitbit/commit/24ca55d))
+* **body fat:** add bodyFat measurement trigger ([008a7e0](https://github.com/jsDotCr/zapier-fitbit/commit/008a7e0))
+* **body weight:** add body weight trigger ([c99a40e](https://github.com/jsDotCr/zapier-fitbit/commit/c99a40e))
+* **env:** publish env variables from .environment file ([b4914e8](https://github.com/jsDotCr/zapier-fitbit/commit/b4914e8))
+
+
+
 <a name="0.3.4"></a>
 ## [0.3.4](https://github.com/jsDotCr/zapier-fitbit/compare/v0.3.3...v0.3.4) (2018-03-03)
 

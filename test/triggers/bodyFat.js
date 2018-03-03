@@ -15,20 +15,20 @@ describe('Fitbit App', () => {
     const bundle = { inputData: {} }
     nock('https://api.fitbit.com/1')
       .replyContentLength()
-      .get(new RegExp(`/user/-/body/log/fat/date/${oneMonthAgo}/${today}\.json`))
+      .get(new RegExp(`/user/-/body/log/fat/date/${oneMonthAgo}/${today}.json`))
       .query(bundle.inputData)
       .reply(200, {
-        "fat": [
+        'fat': [
           {
-            "date":"2012-03-05",
-            "fat":14,
-            "logId":1330991999000,
-            "time":"23:59:59",
-            "source": "API"
+            'date': '2012-03-05',
+            'fat': 14,
+            'logId': 1330991999000,
+            'time': '23:59:59',
+            'source': 'API'
           }
         ]
       })
-    
+
     appTester(App.triggers.bodyFat.operation.perform, bundle)
       .then(results => {
         should.exist(results)
@@ -44,24 +44,24 @@ describe('Fitbit App', () => {
       .get(/\/user\/-\/body\/log\/fat\/date.*\.json/)
       .query(bundle.inputData)
       .reply(200, {
-        "fat": [
+        'fat': [
           {
-            "date":"2012-03-05",
-            "fat":14,
-            "logId":1330991999000,
-            "time":"23:59:59",
-            "source": "API"
+            'date': '2012-03-05',
+            'fat': 14,
+            'logId': 1330991999000,
+            'time': '23:59:59',
+            'source': 'API'
           },
           {
-            "date":"2012-03-05",
-            "fat":13.5,
-            "logId":1330991999000,
-            "time":"21:20:59",
-            "source":"Aria"
+            'date': '2012-03-05',
+            'fat': 13.5,
+            'logId': 1330991999000,
+            'time': '21:20:59',
+            'source': 'Aria'
           }
         ]
       }
-    )
+      )
 
     appTester(App.triggers.bodyFat.operation.perform, bundle)
       .then(results => {

@@ -1,6 +1,6 @@
 const moment = require('moment')
 
-exports.apiRequest = function apiRequest(what, z, bundle) {
+exports.apiRequest = function apiRequest (what, z, bundle) {
   const today = moment()
   const oneMonthAgo = moment().subtract(1, 'month')
   const dataFormat = 'YYYY-MM-DD'

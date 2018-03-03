@@ -46,9 +46,7 @@ const refreshAccessToken = (z, bundle) => {
     }
   })
 
-  // Needs to return `access_token`. If the refresh token stays constant, can skip it. If it changes, can
-  // return it here to update the user's auth on Zapier.
-  return promise.then((response) => {
+  return request.then((response) => {
     if (response.status !== 200) {
       throw new Error('Unable to fetch access token: ' + response.content)
     }

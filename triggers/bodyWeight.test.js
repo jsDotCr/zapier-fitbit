@@ -18,7 +18,7 @@ describe('Fitbit App', () => {
         'weight': [
           {
             'bmi': 23.57,
-            'date': '2015-03-05',
+            'date': '2015-03-04',
             'logId': 1330991899000,
             'time': '23:59:59',
             'weight': 73,

@@ -43,7 +43,7 @@ module.exports = {
       {
         key: 'source',
         label: 'Source'
-      },
+      }
     ]
   }
 }

@@ -27,7 +27,7 @@ const App = {
 
   triggers: {
     [BodyFat.key]: BodyFat,
-    [BodyWeight.key]: BodyWeight,
+    [BodyWeight.key]: BodyWeight
   },
 
   searches: {

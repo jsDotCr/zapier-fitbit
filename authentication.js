@@ -44,7 +44,8 @@ const refreshAccessToken = (z, bundle) => {
     method: 'POST',
     body: {
       grant_type: 'refresh_token',
-      refresh_token: bundle.authData.refresh_token
+      refresh_token: bundle.authData.refresh_token,
+      expires_in: process.env.TOKEN_EXPIRE_TIME || 28800
     },
     headers: getHeaders(clientId, clientSecret)
   })

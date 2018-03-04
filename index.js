@@ -3,6 +3,9 @@ const BodyFat = require('./triggers/bodyFat')
 const BodyWeight = require('./triggers/bodyWeight')
 
 const includeBearerToken = (request, z, bundle) => {
+  if (request.headers.Authorization && request.headers.Authorization.startsWith('Basic')) {
+    return request
+  }
   if (bundle.authData.access_token) {
     request.headers.Authorization = `Bearer ${bundle.authData.access_token}`
   }

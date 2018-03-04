@@ -5,6 +5,7 @@ function getHeaders (clientId, clientSecret) {
   if (clientId && clientSecret) {
     headers['Authorization'] = `Basic ${Buffer.from(`${clientId}:${clientSecret}`).toString('base64')}`
   }
+  return headers
 }
 
 const getAccessToken = (z, bundle) => {

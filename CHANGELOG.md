@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.4.2"></a>
+## [0.4.2](https://github.com/jsDotCr/zapier-fitbit/compare/v0.4.1...v0.4.2) (2018-03-04)
+
+
+### Bug Fixes
+
+* **auth:** do not override Authentication header when it's set with Basic ([014f6bb](https://github.com/jsDotCr/zapier-fitbit/commit/014f6bb))
+
+
+
 <a name="0.4.1"></a>
 ## [0.4.1](https://github.com/jsDotCr/zapier-fitbit/compare/v0.4.0...v0.4.1) (2018-03-03)
 

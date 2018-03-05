@@ -8,6 +8,18 @@ function getHeaders (clientId, clientSecret) {
   return headers
 }
 
+function handleTokensResponse (z, response) {
+  if (response.status !== 200) {
+    throw new Error(`Unable to fetch tokens. API responded with status ${response.status} saying "${response.content}"`)
+  }
+
+  const result = z.JSON.parse(response.content)
+  return {
+    access_token: result.access_token,
+    refresh_token: result.refresh_token
+  }
+}
+
 const getAccessToken = (z, bundle) => {
   const clientId = process.env.CLIENT_ID
   const clientSecret = process.env.CLIENT_SECRET
@@ -24,18 +36,7 @@ const getAccessToken = (z, bundle) => {
     headers: getHeaders(clientId, clientSecret)
   })
 
-  // Needs to return at minimum, `access_token`, and if your app also does refresh, then `refresh_token` too
-  return request.then((response) => {
-    if (response.status !== 200) {
-      throw new Error('Unable to fetch access token: ' + response.content)
-    }
-
-    const result = z.JSON.parse(response.content)
-    return {
-      access_token: result.access_token,
-      refresh_token: result.refresh_token
-    }
-  })
+  return request.then(response => handleTokensResponse(z, response))
 }
 
 const refreshAccessToken = (z, bundle) => {
@@ -51,16 +52,7 @@ const refreshAccessToken = (z, bundle) => {
     headers: getHeaders(clientId, clientSecret)
   })
 
-  return request.then((response) => {
-    if (response.status !== 200) {
-      throw new Error('Unable to fetch access token: ' + response.content)
-    }
-
-    const result = z.JSON.parse(response.content)
-    return {
-      access_token: result.access_token
-    }
-  })
+  return request.then(response => handleTokensResponse(z, response))
 }
 
 const testAuth = (z, bundle) => {

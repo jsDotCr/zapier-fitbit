@@ -8,7 +8,7 @@ const App = require('../index')
 const appTester = zapier.createAppTester(App)
 zapier.tools.env.inject()
 
-describe('Fitbit App', () => {
+describe('Fitbit App triggers: body fat', () => {
   it('should fetch last month\'s data', done => {
     const today = moment().format('YYYY-MM-DD')
     const oneMonthAgo = moment().subtract(1, 'month').format('YYYY-MM-DD')

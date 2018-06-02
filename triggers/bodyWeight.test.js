@@ -7,7 +7,7 @@ const App = require('../index')
 const appTester = zapier.createAppTester(App)
 zapier.tools.env.inject()
 
-describe('Fitbit App', () => {
+describe('Fitbit App triggers: body weight', () => {
   it('should run triggers.bodyWeight', done => {
     const bundle = { inputData: {} }
     nock('https://api.fitbit.com/1')
